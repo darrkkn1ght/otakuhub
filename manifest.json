@@ -1,0 +1,21 @@
+{
+  "name": "OtakuHub",
+  "short_name": "OtakuHub",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#4ecdc4",
+  "description": "Nigeria's Premier Anime Community & Cultural Movement.",
+  "icons": [
+    {
+      "src": "OtakuHub Graffiti Samurai Logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "OtakuHub Graffiti Samurai Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

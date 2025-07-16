@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to OtakuHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #232526 0%, #000000 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        .intro-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100vw;
+        }
+        .intro-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(78,205,196,0.18);
+            margin-bottom: 1.5rem;
+            background: #fff;
+            object-fit: contain;
+        }
+        .intro-title {
+            font-family: 'Playfair Display', 'Inter', Arial, sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.7rem;
+        }
+        .intro-tagline {
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 1.1rem;
+            color: #fff;
+            opacity: 0.85;
+            letter-spacing: 0.5px;
+            margin-bottom: 2.2rem;
+            text-align: center;
+        }
+        .enter-btn {
+            font-family: 'Playfair Display', 'Inter', Arial, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 0.9rem 2.2rem;
+            border: none;
+            border-radius: 32px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            color: #fff;
+            box-shadow: 0 2px 16px rgba(78,205,196,0.10);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .enter-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 24px rgba(255,107,107,0.18), 0 2px 16px rgba(78,205,196,0.18);
+        }
+    </style>
+</head>
+<body>
+    <div class="intro-container">
+        <img class="intro-logo" src="OtakuHub Graffiti Samurai Logo.png" alt="OtakuHub Logo">
+        <div class="intro-title">OtakuHub</div>
+        <div class="intro-tagline">Nigeria's Premier Anime Community & Cultural Movement</div>
+        <a href="index.html" class="enter-btn">Enter OtakuHub</a>
+    </div>
+</body>
+</html> 
