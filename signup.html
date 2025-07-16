@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up – OtakuHub</title>
+    <meta name="description" content="Create your OtakuHub account.">
+    <link rel="icon" type="image/png" href="OtakuHub Graffiti Samurai Logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="container" aria-label="Main navigation">
+            <div class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
+                <img src="OtakuHub Graffiti Samurai Logo.png" alt="OtakuHub Logo" style="height: 48px; width: auto; vertical-align: middle; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); background: #fff; padding: 2px;">
+                <span style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">OtakuHub</span>
+            </div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="mobile-menu" role="menubar">
+                <li><a href="index.html#vision" role="menuitem">Vision</a></li>
+                <li><a href="index.html#team" role="menuitem">Team</a></li>
+                <li><a href="index.html#events" role="menuitem">Events</a></li>
+                <li><a href="index.html#gallery" role="menuitem">Gallery</a></li>
+                <li><a href="index.html#join" role="menuitem">Join</a></li>
+                <li><a href="index.html#discord" role="menuitem">Community Chat</a></li>
+                <li><a href="login.html" class="auth-btn" role="menuitem">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="auth-page-section">
+            <div class="container">
+                <div class="auth-page-card">
+                    <h2 style="text-align:center;">Sign Up for OtakuHub</h2>
+                    <form class="auth-form" autocomplete="on" style="margin-top:1.2rem;">
+                        <input type="text" placeholder="Full Name" name="fullname" required>
+                        <input type="email" placeholder="Email" name="email" required autocomplete="username">
+                        <input type="text" placeholder="Username (optional)" name="username">
+                        <input type="password" placeholder="Password" name="password" required autocomplete="new-password">
+                        <input type="password" placeholder="Confirm Password" name="confirm" required autocomplete="new-password">
+                        <input type="tel" placeholder="Phone Number (optional)" name="phone">
+                        <input type="text" placeholder="University/Institution (optional)" name="university">
+                        <select name="role" required>
+                            <option value="">Preferred Role</option>
+                            <option value="designer">🎨 Designer</option>
+                            <option value="social-media">📱 Social Media Manager</option>
+                            <option value="content-creator">📸 Content Creator</option>
+                            <option value="writer">✍️ Writer</option>
+                            <option value="strategy">🎯 Strategy Head</option>
+                            <option value="event-planner">🛠 Event Planner</option>
+                            <option value="merch-creative">👘 Merch Creative</option>
+                            <option value="influencer-liaison">🗣 Influencer Liaison</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea placeholder="Short Bio/About You" name="bio" rows="2" required></textarea>
+                        <input type="text" placeholder="Portfolio/Links (optional)" name="portfolio">
+                        <label class="auth-checkbox"><input type="checkbox" name="guidelines" required> I agree to the community guidelines</label>
+                        <button type="submit" class="auth-submit" aria-label="Submit sign up form">Sign Up</button>
+                    </form>
+                    <div style="text-align:center; margin-top:1.1rem; font-size:0.98rem;">
+                        Already have an account? <a href="login.html" style="color:#4ecdc4;font-weight:600;">Log In</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>OtakuHub</h3>
+                    <p>Building Nigeria's premier anime community and cultural movement.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Ready to join the movement?</p>
+                    <p>Email: hello@otakuhub.ng</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="TikTok">🎵</a>
+                        <a href="#" title="YouTube">📺</a>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.7;">
+                © 2024 OtakuHub. All rights reserved. | This is not just anime. This is culture. This is business. This is legacy.
+            </p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 

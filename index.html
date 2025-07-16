@@ -3,670 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OtakuHub - Join the Movement</title>
+    <title>OtakuHub - Nigeria's Premier Anime Community & Cultural Movement</title>
+    <meta name="description" content="OtakuHub is Nigeria's fast-rising anime community and cultural movement. Join us for events, fashion, and real otaku culture!">
+    <meta name="keywords" content="OtakuHub, anime, Nigeria, community, events, otaku, fashion, culture, OtakuFest, manga, cosplay, youth">
+    <meta name="author" content="OtakuHub">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="OtakuHub - Nigeria's Premier Anime Community & Cultural Movement">
+    <meta property="og:description" content="OtakuHub is Nigeria's fast-rising anime community and cultural movement. Join us for events, fashion, and real otaku culture!">
+    <meta property="og:image" content="OtakuHub Graffiti Samurai Logo.png">
+    <meta property="og:url" content="https://otakuhub.ng/">
+    <meta property="og:site_name" content="OtakuHub">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OtakuHub - Nigeria's Premier Anime Community & Cultural Movement">
+    <meta name="twitter:description" content="OtakuHub is Nigeria's fast-rising anime community and cultural movement. Join us for events, fashion, and real otaku culture!">
+    <meta name="twitter:image" content="OtakuHub Graffiti Samurai Logo.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#4ecdc4">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            background: linear-gradient(135deg, #232526 0%, #000000 100%);
-            color: #fff;
-            overflow-x: hidden;
-            line-height: 1.6;
-            /* Add more vibrancy */
-            background-image: linear-gradient(120deg, #ff6b6b 0%, #4ecdc4 100%), linear-gradient(135deg, #232526 0%, #000000 100%);
-            background-blend-mode: overlay;
-        }
-        .hero-content h1, .logo span, h2, h3, h4, .cta-button, .submit-btn, .feature-image-caption, .testimonial-meta {
-            font-family: 'Poppins', 'Inter', Arial, sans-serif;
-        }
-        /* Splash/Intro styles */
-        #splash {
-            position: fixed;
-            z-index: 2000;
-            top: 0; left: 0; right: 0; bottom: 0;
-            width: 100vw; height: 100vh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #4ecdc4 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.7s cubic-bezier(0.4,0.2,0.2,1);
-        }
-        #splash-logo {
-            width: 90px;
-            height: 90px;
-            border-radius: 16px;
-            box-shadow: 0 4px 32px rgba(78,205,196,0.18);
-            margin-bottom: 1.5rem;
-            background: #fff;
-            object-fit: contain;
-        }
-        #splash-title {
-            font-family: 'Poppins', 'Inter', Arial, sans-serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.7rem;
-        }
-        #splash-tagline {
-            font-family: 'Inter', Arial, sans-serif;
-            font-size: 1.1rem;
-            color: #fff;
-            opacity: 0.85;
-            letter-spacing: 0.5px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #ff6b6b;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(35,37,38,0.82) 0%, rgba(0,0,0,0.82) 100%), url('1081458.jpg') center center/cover no-repeat;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a"><stop offset="0" stop-color="%23ff6b6b" stop-opacity="0.1"/><stop offset="1" stop-color="%23ff6b6b" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 400% 400%;
-            animation: gradientShift 4s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        /* Vision Section */
-        .vision {
-            padding: 100px 0;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(5px);
-        }
-
-        .vision h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .vision-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .vision-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .vision-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border-color: #ff6b6b;
-        }
-
-        .vision-card h3 {
-            color: #ff6b6b;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        /* Team Section */
-        .team-section {
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .team-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .roles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .role-card {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
-            border-radius: 10px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .role-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.2);
-        }
-
-        .role-card h4 {
-            color: #4ecdc4;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Form Section */
-        .form-section {
-            padding: 100px 0;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .form-container h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #4ecdc4;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #ff6b6b;
-            box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-        }
-
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .submit-btn:hover::before {
-            left: 100%;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(90deg, #0f3460 60%, #4ecdc4 100%);
-            padding: 50px 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: #ff6b6b;
-            margin-bottom: 1rem;
-        }
-
-        .footer-section p {
-            opacity: 0.8;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            color: #4ecdc4;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #ff6b6b;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 1rem;
-            }
-            
-            .vision h2,
-            .team-section h2 {
-                font-size: 2rem;
-            }
-            
-            .form-container {
-                padding: 2rem;
-            }
-        }
-
-        /* Scroll Animation Classes */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        .fade-in {
-            opacity: 0;
-        }
-
-        .slide-left {
-            opacity: 0;
-            transform: translateX(-50px);
-        }
-
-        .slide-right {
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        .logo img {
-            transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
-        }
-        .logo img:hover {
-            transform: scale(1.12) rotate(-3deg);
-            box-shadow: 0 6px 24px rgba(255, 107, 107, 0.35), 0 2px 16px rgba(78, 205, 196, 0.18);
-        }
-        .testimonials-section {
-            padding: 80px 0 40px 0;
-            background: rgba(0,0,0,0.25);
-            backdrop-filter: blur(6px);
-        }
-        .testimonials-slider {
-            display: flex;
-            gap: 2rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 1rem;
-        }
-        .testimonial-card {
-            min-width: 320px;
-            max-width: 350px;
-            background: linear-gradient(120deg, rgba(78,205,196,0.13), rgba(255,107,107,0.10));
-            border-radius: 16px;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 2px 16px rgba(78,205,196,0.10);
-            color: #fff;
-            scroll-snap-align: start;
-            border: 1.5px solid rgba(255,255,255,0.13);
-            margin-bottom: 1rem;
-            flex-shrink: 0;
-            transition: transform 0.3s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.3s cubic-bezier(0.4,0.2,0.2,1);
-        }
-        .testimonial-card:hover {
-            transform: scale(1.04) rotate(-1deg);
-            box-shadow: 0 6px 24px rgba(255,107,107,0.18), 0 2px 16px rgba(78,205,196,0.18);
-        }
-        .testimonial-meta {
-            margin-top: 1.2rem;
-            font-size: 1rem;
-            color: #4ecdc4;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-        @media (max-width: 900px) {
-            .testimonials-slider {
-                flex-direction: column;
-                gap: 1.5rem;
-                overflow-x: visible;
-            }
-            .testimonial-card {
-                min-width: 0;
-                max-width: 100%;
-            }
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            width: 40px;
-            height: 40px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            z-index: 1100;
-            margin-left: 1rem;
-            transition: opacity 0.3s;
-        }
-        .hamburger span {
-            display: block;
-            height: 4px;
-            width: 28px;
-            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.4,0.2,0.2,1);
-        }
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-            .nav-links {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                right: 20px;
-                background: rgba(22,33,62,0.98);
-                border-radius: 12px;
-                box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-                padding: 1.5rem 2rem;
-                gap: 1.5rem;
-                min-width: 180px;
-                opacity: 0;
-                pointer-events: none;
-                transform: translateY(-20px);
-                transition: opacity 0.3s, transform 0.3s;
-                z-index: 1050;
-            }
-            .nav-links.open {
-                opacity: 1;
-                pointer-events: auto;
-                transform: translateY(0);
-            }
-        }
-        .feature-image-section {
-            width: 100vw;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            min-height: 320px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .feature-image-section img {
-            width: 100vw;
-            max-width: 100%;
-            height: 400px;
-            object-fit: cover;
-            filter: brightness(0.85) saturate(1.1);
-            display: block;
-        }
-        .feature-image-caption {
-            position: absolute;
-            bottom: 24px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            color: #fff;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
-            background: linear-gradient(90deg,rgba(26,26,46,0.0) 0%,rgba(26,26,46,0.7) 50%,rgba(26,26,46,0.0) 100%);
-            padding: 0.7rem 0;
-        }
-        @media (max-width: 700px) {
-            .feature-image-section img {
-                height: 200px;
-            }
-            .feature-image-caption {
-                font-size: 1rem;
-                bottom: 10px;
-            }
-        }
-    </style>
+    <link rel="icon" type="image/png" href="OtakuHub Graffiti Samurai Logo.png">
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <div id="intro" style="position:fixed;z-index:2000;top:0;left:0;right:0;bottom:0;width:100vw;height:100vh;background:linear-gradient(135deg,#1a1a2e 0%,#4ecdc4 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;">
-        <img id="intro-logo" src="OtakuHub Graffiti Samurai Logo.png" alt="OtakuHub Logo" style="width:90px;height:90px;border-radius:16px;box-shadow:0 4px 32px rgba(78,205,196,0.18);margin-bottom:1.5rem;background:#fff;object-fit:contain;">
-        <div id="intro-title" style="font-family:'Poppins','Inter',Arial,sans-serif;font-size:2.2rem;font-weight:700;background:linear-gradient(45deg,#ff6b6b,#4ecdc4,#45b7d1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.7rem;">OtakuHub</div>
-        <div id="intro-tagline" style="font-family:'Inter',Arial,sans-serif;font-size:1.1rem;color:#fff;opacity:0.85;letter-spacing:0.5px;margin-bottom:2.2rem;">Nigeria's Premier Anime Community & Cultural Movement</div>
-        <button id="enter-btn" style="font-family:'Poppins','Inter',Arial,sans-serif;font-size:1.1rem;font-weight:600;padding:0.9rem 2.2rem;border:none;border-radius:32px;background:linear-gradient(90deg,#ff6b6b,#4ecdc4);color:#fff;box-shadow:0 2px 16px rgba(78,205,196,0.10);cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;">Enter OtakuHub</button>
+    <div class="animated-bg" aria-hidden="true">
+        <svg id="bg-svg" width="100%" height="100%" viewBox="0 0 1920 1080" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;">
+            <circle class="bg-shape" cx="300" cy="200" r="80" fill="#4ecdc4" fill-opacity="0.13"/>
+            <circle class="bg-shape" cx="1600" cy="300" r="120" fill="#ff6b6b" fill-opacity="0.10"/>
+            <circle class="bg-shape" cx="900" cy="900" r="100" fill="#764ba2" fill-opacity="0.10"/>
+            <circle class="bg-shape" cx="400" cy="800" r="60" fill="#f7b42c" fill-opacity="0.10"/>
+        </svg>
+    </div>
+    <a href="#main-site" class="skip-link">Skip to main content</a>
+    <div id="introOverlay" class="intro-overlay" role="dialog" aria-modal="true" aria-label="Intro overlay">
+        <div class="collage-bg">
+            <img src="IMG-20250716-WA0001.jpg" alt="Hangout 1">
+            <img src="IMG-20250716-WA0002.jpg" alt="Hangout 2">
+            <img src="IMG-20250716-WA0003.jpg" alt="Hangout 3">
+            <img src="IMG-20250716-WA0004.jpg" alt="Hangout 4">
+            <img src="IMG-20250716-WA0005.jpg" alt="Hangout 5">
+            <div class="collage-gradient"></div>
+        </div>
+        <div class="intro-content">
+            <img class="intro-logo" src="OtakuHub Graffiti Samurai Logo.png" alt="OtakuHub Logo">
+            <div class="intro-title">OtakuHub</div>
+            <div class="intro-tagline">Nigeria's Premier Anime Community & Cultural Movement</div>
+            <button id="enterSiteBtn" class="enter-btn">Enter OtakuHub</button>
+        </div>
     </div>
     <div id="main-site" style="display:none;">
     <header>
-        <nav class="container">
+        <nav class="container" aria-label="Main navigation">
             <div class="logo" style="display: flex; align-items: center; gap: 0.5rem;">
                 <img src="OtakuHub Graffiti Samurai Logo.png" alt="OtakuHub Logo" style="height: 48px; width: auto; vertical-align: middle; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); background: #fff; padding: 2px;">
                 <span style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">OtakuHub</span>
             </div>
-            <button class="hamburger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
-                <span></span><span></span><span></span>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-            <ul class="nav-links" id="mobile-menu">
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#join">Join Us</a></li>
+            <ul class="nav-links" id="mobile-menu" role="menubar">
+                <li><a href="#vision" role="menuitem">Vision</a></li>
+                <li><a href="#team" role="menuitem">Team</a></li>
+                <li><a href="#events" role="menuitem">Events</a></li>
+                <li><a href="#gallery" role="menuitem">Gallery</a></li>
+                <li><a href="#join" role="menuitem">Join</a></li>
+                <li><a href="#discord" role="menuitem">Community Chat</a></li>
+                <li class="mobile-auth"><a class="auth-btn" href="login.html" aria-label="Log in to your account" tabindex="0">Log In</a></li>
+                <li class="mobile-auth"><a class="auth-btn" href="signup.html" aria-label="Sign up for OtakuHub" tabindex="0">Sign Up</a></li>
             </ul>
+            <div class="auth-buttons desktop-auth">
+                <a class="auth-btn" href="login.html" aria-label="Log in to your account" tabindex="0">Log In</a>
+                <a class="auth-btn" href="signup.html" aria-label="Sign up for OtakuHub" tabindex="0">Sign Up</a>
+            </div>
         </nav>
     </header>
 
@@ -681,13 +92,13 @@
         </div>
     </section>
 
+    <!-- Vision Section -->
     <section id="vision" class="vision">
         <div class="container">
             <h2 class="fade-up">What is OtakuHub?</h2>
             <p class="fade-up" style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
                 OtakuHub is Nigeria's fast-rising anime community — but what we're truly building is a <strong>nationwide cultural movement</strong>.
             </p>
-            
             <div class="vision-grid">
                 <div class="vision-card fade-up">
                     <h3>🎭 Cultural Movement</h3>
@@ -717,13 +128,13 @@
         </div>
     </section>
 
+    <!-- Team Section -->
     <section id="team" class="team-section">
         <div class="container">
             <h2 class="fade-up">Who We Need on This Journey</h2>
             <p class="fade-up" style="font-size: 1.1rem; margin-bottom: 2rem;">
                 You're not joining a group chat — you're joining a startup with vision. A creative family. A movement.
             </p>
-            
             <div class="roles-grid">
                 <div class="role-card fade-up" data-role="designer" style="cursor:pointer;">
                     <h4>🎨 Designers</h4>
@@ -761,6 +172,7 @@
         </div>
     </section>
 
+    <!-- Join Section -->
     <section id="join" class="form-section">
         <div class="container">
             <div class="form-container">
@@ -775,27 +187,22 @@
                     <input type="hidden" name="_subject" value="New OtakuHub Team Application">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-                    
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required placeholder="Enter your full name">
                     </div>
-                    
                     <div class="form-group">
                         <label for="email">Email Address *</label>
                         <input type="email" id="email" name="email" required placeholder="your.email@gmail.com">
                     </div>
-                    
                     <div class="form-group">
                         <label for="phone">Phone Number *</label>
                         <input type="tel" id="phone" name="phone" required placeholder="+234 XXX XXX XXXX">
                     </div>
-                    
                     <div class="form-group">
                         <label for="university">University/Institution</label>
                         <input type="text" id="university" name="university" placeholder="University of Ibadan">
                     </div>
-                    
                     <div class="form-group">
                         <label for="role">Preferred Role *</label>
                         <select id="role" name="role" required>
@@ -811,74 +218,43 @@
                             <option value="other">Other (specify in message)</option>
                         </select>
                     </div>
-                    
                     <div class="form-group">
                         <label for="experience">Relevant Experience/Skills</label>
                         <textarea id="experience" name="experience" rows="4" placeholder="Tell us about your relevant experience, skills, or portfolio..."></textarea>
                     </div>
-                    
                     <div class="form-group">
                         <label for="why">Why do you want to join OtakuHub? *</label>
                         <textarea id="why" name="why" rows="4" required placeholder="Share your motivation and what you hope to contribute..."></textarea>
                     </div>
-                    
                     <div class="form-group">
                         <label for="availability">Availability</label>
                         <textarea id="availability" name="availability" rows="3" placeholder="How much time can you commit? Any scheduling constraints?"></textarea>
                     </div>
-                    
                     <button type="submit" class="submit-btn">I'm In - Let's Build This! 🚀</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>OtakuHub</h3>
-                    <p>Building Nigeria's premier anime community and cultural movement.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p>Ready to join the movement?</p>
-                    <p>Email: hello@otakuhub.ng</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#" title="Instagram">📷</a>
-                        <a href="#" title="Twitter">🐦</a>
-                        <a href="#" title="TikTok">🎵</a>
-                        <a href="#" title="YouTube">📺</a>
-                    </div>
-                </div>
-            </div>
-            <p style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.7;">
-                © 2024 OtakuHub. All rights reserved. | This is not just anime. This is culture. This is business. This is legacy.
-            </p>
-        </div>
-    </footer>
-
+    <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
             <h2 class="fade-up" style="text-align:center; margin-bottom:2rem; background:linear-gradient(45deg,#4ecdc4,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Community Highlights</h2>
             <div class="testimonials-slider">
                 <div class="testimonial-card fade-up">
-                    <p>“OtakuHub gave me a creative family and a platform to share my art. The energy is unmatched!”</p>
+                    <p>"OtakuHub gave me a creative family and a platform to share my art. The energy is unmatched!"</p>
                     <div class="testimonial-meta">— Aisha, Designer</div>
                 </div>
                 <div class="testimonial-card fade-up">
-                    <p>“From OtakuFest to online events, I’ve made real friends and grown my skills.”</p>
+                    <p>"From OtakuFest to online events, I've made real friends and grown my skills."</p>
                     <div class="testimonial-meta">— Tunde, Content Creator</div>
                 </div>
                 <div class="testimonial-card fade-up">
-                    <p>“It’s more than anime. It’s a movement. I’m proud to be part of it.”</p>
+                    <p>"It's more than anime. It's a movement. I'm proud to be part of it."</p>
                     <div class="testimonial-meta">— Chidera, Strategy Head</div>
                 </div>
                 <div class="testimonial-card fade-up">
-                    <p>“I joined for the anime, stayed for the community and opportunities.”</p>
+                    <p>"I joined for the anime, stayed for the community and opportunities."</p>
                     <div class="testimonial-meta">— Emeka, Social Media</div>
                 </div>
             </div>
@@ -889,296 +265,60 @@
         <div class="feature-image-caption">Celebrating the spirit of anime together</div>
     </section>
 
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2 class="fade-up" style="text-align:center; margin-bottom:2rem; background:linear-gradient(45deg,#4ecdc4,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Upcoming Events & News</h2>
+            <div class="events-grid">
+                <div class="event-card fade-up">
+                    <div class="event-date">Jul 27, 2025</div>
+                    <div class="event-title">OtakuHub Movie Night: Summer Anime Bash</div>
+                    <div class="event-desc">Join us for a night of anime, games, and fun at UI Main Hall. Free snacks for early birds!</div>
+                </div>
+                <div class="event-card fade-up">
+                    <div class="event-date">Aug 10, 2025</div>
+                    <div class="event-title">OtakuFest 2025 – Registration Opens</div>
+                    <div class="event-desc">Nigeria's biggest anime convention returns! Early registration gets exclusive merch.</div>
+                </div>
+                <div class="event-card fade-up">
+                    <div class="event-date">Aug 20, 2025</div>
+                    <div class="event-title">Community News: New Discord Server</div>
+                    <div class="event-desc">We're launching our official Discord for real-time chat, events, and more. Stay tuned!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="fade-up" style="text-align:center; margin-bottom:2rem; background:linear-gradient(45deg,#4ecdc4,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Gallery: OtakuHub Moments</h2>
+            <div class="gallery-grid">
+                <img src="IMG-20250716-WA0001.jpg" alt="Hangout 1" class="gallery-img fade-up">
+                <img src="IMG-20250716-WA0002.jpg" alt="Hangout 2" class="gallery-img fade-up">
+                <img src="IMG-20250716-WA0003.jpg" alt="Hangout 3" class="gallery-img fade-up">
+                <img src="IMG-20250716-WA0004.jpg" alt="Hangout 4" class="gallery-img fade-up">
+                <img src="IMG-20250716-WA0005.jpg" alt="Hangout 5" class="gallery-img fade-up">
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord Section -->
+    <section id="discord" class="discord-section">
+        <div class="container">
+            <h2 class="fade-up" style="text-align:center; margin-bottom:1.2rem; background:linear-gradient(45deg,#4ecdc4,#ff6b6b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Join the OtakuHub Community Chat</h2>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:1.2rem;">
+                <a href="https://discord.gg/QHFuDaGWdQ" target="_blank" rel="noopener" class="discord-btn" aria-label="Join our Discord server" tabindex="0">Join our Discord</a>
+                <iframe src="https://discord.com/widget?id=1394973142740631623&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" class="discord-widget"></iframe>
+            </div>
+        </div>
+    </section>
+
     <button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:1200;background:linear-gradient(45deg,#4ecdc4,#ff6b6b);color:#fff;border:none;border-radius:50%;width:52px;height:52px;box-shadow:0 4px 24px rgba(78,205,196,0.18);font-size:2rem;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;outline:none;">
         ↑
     </button>
     </div>
-    <script>
-        // Register ScrollTrigger plugin
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Page load animations
-        window.addEventListener('load', function() {
-            // Hero animations
-            gsap.from('.hero-content h1', {
-                duration: 1,
-                y: 50,
-                opacity: 0,
-                ease: 'power2.out'
-            });
-            
-            gsap.from('.hero-content p', {
-                duration: 1,
-                y: 30,
-                opacity: 0,
-                delay: 0.3,
-                ease: 'power2.out'
-            });
-            
-            gsap.from('.cta-button', {
-                duration: 1,
-                y: 30,
-                opacity: 0,
-                delay: 0.6,
-                ease: 'power2.out'
-            });
-
-            // Logo animation
-            gsap.from('.logo img', {
-                duration: 1.1,
-                opacity: 0,
-                scale: 0.7,
-                rotate: 12,
-                ease: 'back.out(1.7)',
-                delay: 0.2
-            });
-        });
-
-        // Scroll animations
-        gsap.utils.toArray('.fade-up').forEach(element => {
-            gsap.fromTo(element, 
-                {
-                    opacity: 0,
-                    y: 50
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: element,
-                        start: 'top 80%',
-                        end: 'bottom 20%',
-                        toggleActions: 'play none none reverse'
-                    }
-                }
-            );
-        });
-
-        // Vision cards hover animation
-        gsap.utils.toArray('.vision-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                gsap.to(card, {
-                    duration: 0.3,
-                    scale: 1.05,
-                    y: -10,
-                    ease: 'power2.out'
-                });
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                gsap.to(card, {
-                    duration: 0.3,
-                    scale: 1,
-                    y: 0,
-                    ease: 'power2.out'
-                });
-            });
-        });
-
-        // Role cards stagger animation
-        gsap.fromTo('.role-card', 
-            {
-                opacity: 0,
-                y: 30
-            },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: '.roles-grid',
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none reverse'
-                }
-            }
-        );
-
-        // Form animations
-        gsap.from('.form-container', {
-            duration: 1,
-            y: 50,
-            opacity: 0,
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: '.form-container',
-                start: 'top 80%',
-                end: 'bottom 20%',
-                toggleActions: 'play none none reverse'
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission animation
-        document.getElementById('recruitmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const submitBtn = this.querySelector('.submit-btn');
-            submitBtn.innerHTML = 'Submitting... 🚀';
-            submitBtn.disabled = true;
-            gsap.to(submitBtn, {
-                duration: 0.3,
-                scale: 0.95,
-                ease: 'power2.out'
-            });
-            // Show success message
-            const msg = document.getElementById('form-success-message');
-            msg.style.display = 'block';
-            gsap.fromTo(msg, {opacity:0, y:30}, {opacity:1, y:0, duration:0.7, ease:'power2.out'});
-            // Hide form
-            this.style.display = 'none';
-            // Redirect after 2 seconds
-            setTimeout(() => {
-                window.location.href = 'https://yourwebsite.com/thank-you.html';
-            }, 2000);
-        });
-
-        // Parallax effect for hero background
-        gsap.to('.hero::before', {
-            y: -100,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '.hero',
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true
-            }
-        });
-
-        // Header background opacity on scroll
-        ScrollTrigger.create({
-            trigger: '.hero',
-            start: 'top top',
-            end: 'bottom top',
-            onUpdate: self => {
-                const header = document.querySelector('header');
-                const opacity = Math.min(self.progress, 1);
-                header.style.backgroundColor = `rgba(0, 0, 0, ${0.9 * opacity})`;
-            }
-        });
-
-        // Add floating animation to vision cards
-        gsap.utils.toArray('.vision-card').forEach((card, index) => {
-            gsap.to(card, {
-                y: Math.sin(index) * 10,
-                duration: 2 + index * 0.5,
-                ease: 'power2.inOut',
-                yoyo: true,
-                repeat: -1
-            });
-        });
-
-        // Role card click: scroll to form and pre-select role
-        const roleMap = {
-            'designer': '🎨 Designer',
-            'social-media': '📱 Social Media Manager',
-            'content-creator': '📸 Content Creator',
-            'writer': '✍️ Writer',
-            'strategy': '🎯 Strategy Head',
-            'event-planner': '🛠 Event Planner',
-            'merch-creative': '👘 Merch Creative',
-            'influencer-liaison': '🗣 Influencer Liaison'
-        };
-        document.querySelectorAll('.role-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const role = this.getAttribute('data-role');
-                const select = document.getElementById('role');
-                if (select && roleMap[role]) {
-                    select.value = role;
-                    select.dispatchEvent(new Event('change'));
-                }
-                document.getElementById('join').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-        gsap.utils.toArray('.testimonial-card').forEach((card, i) => {
-            gsap.fromTo(card, {
-                opacity: 0,
-                y: 40
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 0.9,
-                delay: 0.2 + i * 0.15,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 90%',
-                    toggleActions: 'play none none reverse'
-                }
-            });
-        });
-
-        // Hamburger menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', function() {
-            const expanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !expanded);
-            this.classList.toggle('active');
-            navLinks.classList.toggle('open');
-        });
-        // Close menu on link click (mobile)
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                if(window.innerWidth <= 768) {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('open');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-
-        // Back to Top button logic
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 300) {
-                backToTop.style.display = 'block';
-                gsap.to(backToTop, {opacity:1, scale:1, duration:0.3, ease:'power2.out'});
-            } else {
-                gsap.to(backToTop, {opacity:0, scale:0.8, duration:0.2, ease:'power2.in', onComplete:()=>{backToTop.style.display='none';}});
-            }
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({top:0, behavior:'smooth'});
-        });
-
-        // Intro/landing page logic
-        window.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('main-site').style.display = 'none';
-            document.getElementById('intro').style.display = 'flex';
-            document.getElementById('enter-btn').addEventListener('click', function() {
-                gsap.to('#intro', {opacity:0, duration:0.7, ease:'power2.in', onComplete:()=>{
-                    document.getElementById('intro').style.display = 'none';
-                    document.getElementById('main-site').style.display = '';
-                }});
-            });
-        });
-    </script>
-    <!-- Register service worker for PWA -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('service-worker.js')
-                    .then(function(reg) { /* success */ })
-                    .catch(function(err) { /* error */ });
-            });
-        }
-    </script>
+    
 </body>
+<script src="script.js"></script>
 </html>
