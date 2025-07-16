@@ -826,3 +826,192 @@ footer {
         font-size: 0.98rem;
     }
 }
+
+/* --- Restore intro overlay and collage styles --- */
+.intro-overlay {
+  position: fixed;
+  z-index: 3000;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
+  transition: opacity 0.7s cubic-bezier(0.4,0.2,0.2,1);
+}
+.collage-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0;
+  z-index: 1;
+}
+.collage-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.82;
+  filter: blur(1.5px) brightness(0.95) saturate(1.1);
+}
+.collage-bg img:nth-child(1) { grid-column: 1; grid-row: 1; }
+.collage-bg img:nth-child(2) { grid-column: 2; grid-row: 1; }
+.collage-bg img:nth-child(3) { grid-column: 3; grid-row: 1; }
+.collage-bg img:nth-child(4) { grid-column: 1 / span 2; grid-row: 2; }
+.collage-bg img:nth-child(5) { grid-column: 3; grid-row: 2; }
+.collage-gradient {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(35,37,38,0.85) 0%, rgba(0,0,0,0.85) 100%);
+  z-index: 2;
+}
+.intro-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+.intro-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(78,205,196,0.18);
+  margin-bottom: 1.5rem;
+  background: #fff;
+  object-fit: contain;
+}
+.intro-title {
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.7rem;
+}
+.intro-tagline {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.1rem;
+  color: #fff;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+  margin-bottom: 2.2rem;
+  text-align: center;
+}
+.enter-btn {
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.9rem 2.2rem;
+  border: none;
+  border-radius: 32px;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+  color: #fff;
+  box-shadow: 0 2px 16px rgba(78,205,196,0.10);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 1.2rem;
+}
+.enter-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(255,107,107,0.18), 0 2px 16px rgba(78,205,196,0.18);
+}
+@media (max-width: 700px) {
+  .collage-bg {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .intro-content {
+    padding: 0 1rem;
+  }
+}
+/* --- End intro overlay restore --- */
+
+/* --- Auth Page Styles (login.html, signup.html) --- */
+.auth-page-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  padding: 2.5rem 0 2rem 0;
+}
+.auth-page-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  max-width: 420px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;
+}
+.auth-form input,
+.auth-form select,
+.auth-form textarea {
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 7px;
+  font-size: 1rem;
+  background: #f7f7fa;
+  transition: border 0.2s;
+}
+.auth-form input:focus,
+.auth-form select:focus,
+.auth-form textarea:focus {
+  border-color: #4ecdc4;
+  outline: none;
+}
+.auth-form textarea {
+  resize: vertical;
+  min-height: 38px;
+  max-height: 120px;
+}
+.auth-submit {
+  background: linear-gradient(90deg,#4ecdc4,#45b7d1);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0.8rem 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.2rem;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(78,205,196,0.10);
+}
+.auth-submit:hover, .auth-submit:focus {
+  background: linear-gradient(90deg,#45b7d1,#4ecdc4);
+  outline: none;
+}
+.auth-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.98rem;
+  color: #444;
+  margin-top: -0.3rem;
+}
+@media (max-width: 600px) {
+  .auth-page-card {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    border-radius: 12px;
+  }
+}
+/* --- End Auth Page Styles --- */
